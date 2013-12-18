@@ -73,7 +73,7 @@ bool Map::canWalk(int x, int y) const {
       iterator != engine.actors.end();
       iterator++){
     Actor *actor = *iterator;
-    if (actor->x == x && actor->y == y){
+    if ( actor->blocks && actor->x == x && actor->y == y){
       return false;
     }
   }
@@ -149,12 +149,6 @@ void Map::createRoom(bool first, int x1, int y1, int x2, int y2){
       }
       nbMonsters--;
     }
-    /*
-    if (rng->getInt(0,3)== 0){
-      engine.actors.push(new Actor((x1 + x2 / 2),(y1 + y2 / 2), 
-            '$', TCODColor::yellow));
-    }
-    */
   }
 }
 

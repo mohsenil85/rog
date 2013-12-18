@@ -4,9 +4,14 @@ class Actor{
     int ch;
     TCODColor col;
     const char *name;
+    bool blocks;
+    Attacker *attacker;
+    Destructible *destructible;
+    Ai *ai;
+    
 
     Actor(int x, int y, int ch, const char *name, const TCODColor &col);
     void update();
-    bool moveOrAttack(int x, int y);
+   // bool moveOrAttack(int x, int y);
     void render() const;
 };
